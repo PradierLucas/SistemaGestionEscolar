@@ -1,0 +1,53 @@
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image{
+    position: relative;
+}
+img{
+    display: block;
+    margin: auto;
+}
+
+.content{
+    height: 6rem;
+    width: rem;
+    color:antiquewhite;
+    position: absolute;
+    background: rgba(0, 0, 0, .4);
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: row;
+    opacity: 0 ;
+    transition: 0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.content:hover{
+    opacity: 1;
+    color: antiquewhite;
+}
+.content > span {
+    color: antiquewhite;
+    font-size: 10px; /* Tamaño del texto */
+    vertical-align: middle; /* Alinear verticalmente */
+    margin-left: 5px; /* Espacio entre el icono y el texto */
+}
+.content > TbPhotoEdit {
+   height: 3rem;
+    vertical-align: middle; 
+
+}
+#dropdown-basic{
+    border: none;
+    color: antiquewhite;
+    height: 6rem;
+    width: 4rem;
+
+}

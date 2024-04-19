@@ -1,0 +1,228 @@
+@import '../../Assets/colors/colors.css';
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+  transition: all 300ms ease;
+  background-color: #cccccc;
+  height: 100%;
+  width: 100%;
+  gap: 8px;
+  border-radius: 5rem 0 0 5rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.bars {
+  display: none;
+}
+
+/* Logo */
+.avatar {
+  display: flex;
+  flex-direction: column;
+  height: 10%;
+  font-weight: bold;
+  font-size: 22px;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 1rem;
+}
+.avatar-default {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 22px;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 1rem;
+  cursor: pointer;
+}
+.avatar>span>span {
+  color: var(--color-text);
+}
+
+.avatar>img {
+  height: 6rem;
+  width: auto;
+  cursor: pointer;
+}
+
+/* Menu */
+.menu {
+  height: 60%;
+  width: 100%;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menuItem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: .5rem;
+  height: 2.5rem;
+  margin-left: 0px;
+  position: relative;
+  transition: all 200ms ease;
+  border-radius: 0.7rem;
+  font-size: 14px;
+  transform: translateX(0);
+  cursor: pointer;
+}
+
+.active-menu {
+  background: var(--activeItem);
+  justify-content: start;
+  margin-left: 0px;
+  width: 100%;
+  transition: all 300ms ease;
+  transform: translateX(10px);
+}
+
+.menuItem:not(.active-menu):hover,
+.logout:hover {
+  width: 100%;
+  background: #e6e6e6;
+  border-radius: 0.7rem;
+  justify-content: flex-start;
+  margin-left: 0px;
+  transition: all 100ms ease;
+  transform: translateX(10px);
+}
+
+.active-menu::before {
+  position: relative;
+  content: "";
+  width: 8px;
+  height: 100%;
+  background: var(--color-text);
+  margin-right: calc(1rem - 8px);
+}
+
+/* Media Queries */
+@media screen and (max-width: 1200px) {
+  .menuItem>span {
+    display: none;
+  }
+
+  .avatar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    z-index: 9;
+    background: rgba(47, 46, 65, 0.54);
+    width: 55%;
+    padding-right: 1rem;
+    height: 100%;
+  }
+
+  .menuItem>span {
+    display: block;
+    color: white;
+    font-weight: bold;
+  }
+
+  .avatar {
+    display: flex;
+  }
+
+  .menu .menuItem:last-child {
+    position: relative;
+    margin-top: 6rem;
+  }
+
+  .bars {
+    display: flex;
+    position: fixed;
+    top: 2rem;
+    left: 60%;
+    background: #ffe0e0;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 9;
+  }
+
+  .close {
+    left: -60%;
+  }
+}
+
+/* General */
+a {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  gap: 0.5rem;
+  margin-left: 10px;
+  position: relative;
+  transition: all 200ms ease;
+  border-radius: 0.7rem;
+  font-size: 14px;
+  transform: translateX(0);
+  cursor: pointer;
+}
+
+.logout:hover {
+  width: 90%;
+  background: #e6e6e6;
+  font-weight: bold;
+  color: #dc3545;
+  border-radius: 0.7rem;
+  justify-content: flex-start;
+  margin-left: 0px;
+  transition: all 150ms ease;
+  transform: translateX(5px);
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.avatar-container {
+  position: relative;
+}
+
+.avatar-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.edit-button {
+  position: absolute;
+  bottom: -10px; /* Ajusta la distancia desde abajo */
+  right: -10px; /* Ajusta la distancia desde la derecha */
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid var(--color-text);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Estilos adicionales para el ícono de edición (puedes ajustarlos según el ícono que uses) */
+.edit-button i {
+  color: var(--color-text);
+  font-size: 18px;
+}
